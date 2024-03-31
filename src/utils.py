@@ -53,12 +53,15 @@ def refactor_products(products: dict) -> list:
 
 
 def check_data() -> list:
-    with open('data/products.json', 'r', encoding='UTF-8') as file:
-        try:
-            products = json.load(file)
-        except JSONDecodeError:
-            return []
-        return products
+    try:
+        with open('data/products.json', 'r', encoding='UTF-8') as file:
+            try:
+                products = json.load(file)
+            except JSONDecodeError:
+                return []
+            return products
+    except FileNotFoundError:
+        return []
 
 
 def save_data(products: list) -> None:

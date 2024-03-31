@@ -1,6 +1,3 @@
-import json
-
-
 class Product:
 
     def __init__(self, id: int, name: str, url: str, price: str, disc_price: int, brand: str):
