@@ -22,7 +22,7 @@ def get_metro_products(storeId: int) -> dict:
                      f'search( storeId: {storeId} ) {{ '
                      'products( '
                      'from: 0 '
-                     'size: 1 '
+                     'size: 100 '
                      'fieldFilters: ['
                      '{ field: "category_id", value: "413939" }'
                      ']) { '
