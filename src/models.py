@@ -1,4 +1,5 @@
 class Product:
+    """Класс продукта."""
 
     def __init__(self, id: int, name: str, url: str, price: str, disc_price: int, brand: str):
         self.id = id
@@ -9,6 +10,8 @@ class Product:
         self.brand = brand
 
     def as_dict(self) -> dict:
+        """Функция для получения атрибутов класса в виде словаря."""
+
         return {
             'id': self.id,
             'name': self.name,

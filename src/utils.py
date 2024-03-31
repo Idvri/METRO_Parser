@@ -1,5 +1,4 @@
 import json
-from json import JSONDecodeError
 
 import requests
 
@@ -14,6 +13,8 @@ STOCKS = [356, 16]
 
 
 def get_metro_products(storeId: int) -> dict:
+    """Функция для получения продуктов, с помощью запроса к API METRO."""
+
     response = requests.post(
         headers=HEADERS,
         url='https://api.metro-cc.ru/products-api/graph',
@@ -38,6 +39,8 @@ def get_metro_products(storeId: int) -> dict:
 
 
 def refactor_products(products: dict) -> list:
+    """Функция для преобразования полученных данных от API METRO в список с продуктами."""
+
     re_products = [
         Product(
             product['id'],
@@ -53,11 +56,13 @@ def refactor_products(products: dict) -> list:
 
 
 def check_data() -> list:
+    """Функция для проверки уже существующих записей в файле с продуктами."""
+
     try:
         with open('data/products.json', 'r', encoding='UTF-8') as file:
             try:
                 products = json.load(file)
-            except JSONDecodeError:
+            except json.JSONDecodeError:
                 return []
             return products
     except FileNotFoundError:
@@ -65,5 +70,7 @@ def check_data() -> list:
 
 
 def save_data(products: list) -> None:
+    """Функция для сохранения данных в файл с продуктами."""
+
     with open('data/products.json', 'w', encoding='UTF-8') as file:
         json.dump(products, file, ensure_ascii=False)

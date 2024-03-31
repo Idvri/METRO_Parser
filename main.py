@@ -2,6 +2,8 @@ from src import get_metro_products, refactor_products, save_data, STOCKS, check_
 
 
 def main() -> None:
+    """Основной скрипт программы для парсинга данных."""
+
     products = []
     checked_list = check_data()
     for stock in STOCKS:
