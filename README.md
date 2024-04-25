@@ -8,7 +8,7 @@
 - ООП.
 
 ### Установка и запуск:
-- git clone https://github.com/Idvri/METRO_PARCER.git - клонируем проект к себе в нужную директорию;
+- git clone https://github.com/Idvri/METRO_Parser.git - клонируем проект к себе в нужную директорию;
 - python -m venv env - создаем вирт. окружение;
 - venv/Scripts/activate (Windows) | source venv/bin/activate (Linux) - запускаем вирт. окружение;
 - pip install -r requirements.txt - устанавливаем зависимости;
