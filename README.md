@@ -1,4 +1,4 @@
-# METRO PARSER
+# METRO Parser
 Программа для парсинга данных продуктов с сайта METRO.
 
 ### Stack:
